@@ -7,6 +7,7 @@ const app = express();
 const path = require("path");
 
 const UserRoute = require("./route/user");
+const ProjectRoute = require("./route/project");
 
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/portfolio", {
@@ -66,3 +67,4 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/user", UserRoute);
+app.use("/api/project", ProjectRoute);
